@@ -38,6 +38,7 @@ main {
   flex-grow: 1;
   background-color: #1d2d3c;
   overflow: auto;
+  padding-top: 50px;
 }
 main .main {
   display: flex;

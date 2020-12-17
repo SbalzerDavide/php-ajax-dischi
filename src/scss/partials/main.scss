@@ -17,6 +17,7 @@ main{
     flex-grow: 1;
     background-color: $primary;
     overflow: auto;
+    padding-top: 50px;
     .main{
         display: flex;
         flex-wrap: wrap;

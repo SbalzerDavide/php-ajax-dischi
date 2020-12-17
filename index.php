@@ -12,12 +12,12 @@
 <body>
 
     <div id="app">
+
+        <!-- import header -->
         <?php require __DIR__ . '/partials/templates/header.php' ?> 
         <main>
             <div class="main container">
                 <?php foreach ($database as $album){ ?>
-
-
                     <div class="box">
                         <div class="img">
                             <img src="<?php echo $album['poster'] ?>" alt="">
@@ -32,7 +32,6 @@
                 <?php } ?>
                 
                 
-                
 
 
             </div>
@@ -41,6 +40,7 @@
 
 
     </div>    
-    <!-- import header -->
+
+    <script src="./dist/js/app.js"></script>
 </body>
 </html>
