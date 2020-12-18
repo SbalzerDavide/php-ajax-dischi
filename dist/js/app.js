@@ -14425,7 +14425,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   data: {
     prova: 'prooova',
     albums: [],
-    apiUrl: window.location.href + 'partials/database.php'
+    apiUrl: window.location.href + 'partials/database.php',
+    filter: ''
   },
   created: function created() {
     var _this = this;
@@ -14438,6 +14439,25 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       // handle error
       console.log(error);
     });
+  },
+  methods: {
+    applyFilter: function applyFilter() {
+      var _this2 = this;
+
+      console.log(this.filter);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(this.apiUrl, {
+        params: {
+          author: this.filter
+        }
+      }).then(function (response) {
+        // handle success
+        console.log(response.data);
+        _this2.albums = response.data;
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
   }
 });
 

@@ -1,5 +1,4 @@
 <?php
-
     $database = [
         [
             'title' => 'New Jersey',
@@ -45,7 +44,30 @@
         ]
     ];
 
+    $filterDatabase= [];
+
+    if (!empty($_GET['author'])){
+        $filterAuthor = $_GET['author'];
+        //echo $filterAuthor;
+        foreach ($database as $album){
+            if ($album['author'] == $filterAuthor){
+                $filterDatabase[] = $album;
+                //array_push($filterDatabase, $album);
+            }
+        };
+        //var_dump($filterDatabase);
+    } else {
+        $filterDatabase = $database;
+        //echo 'non ci sono parametri';
+        //var_dump($filterDatabase);
+
+    };
+
+    //$filterDatabase= $database;
+
+
+
     header('Content-Type: application/json');
-    echo json_encode($database);
+    echo json_encode($filterDatabase);
 
 ?>

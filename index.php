@@ -1,6 +1,3 @@
-<!-- import -->
-<?php require __DIR__ . '/partials/variables.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +14,12 @@
         <?php require __DIR__ . '/partials/templates/header.php' ?> 
         <main>
             <div class="filter">
-                <select>
-                    <?php foreach ($database as $album) {?>
-                        <option value=""><?php echo $album['author'] ?></option>
-                    <?php } ?>
-                </select>
+               <h4>Quale artista vuoi visualizzare?</h4>
+               <select v-model="filter" @change='applyFilter'>
+                    <option v-for="album in albums" :value="album.author">
+                       {{ album.author }}
+                    </option>
+               </select>
             </div>
             <div class="main container">
                 <div v-for="album in albums" class="box">

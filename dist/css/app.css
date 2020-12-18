@@ -6102,6 +6102,7 @@ readers do not read off random characters that represent icons */
 
 body {
   font-family: sans-serif;
+  color: #ddd;
 }
 
 .container {
@@ -6112,6 +6113,14 @@ body {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 #app {
@@ -6147,7 +6156,6 @@ main .main .box {
   background-color: #000;
   padding: 30px;
   text-align: center;
-  color: #fff;
   margin-bottom: 30px;
 }
 main .main .box > * {
@@ -6159,4 +6167,7 @@ main .main .box .img {
 main .filter {
   margin: 30px 0;
   text-align: center;
+}
+main .filter select {
+  margin: 10px 0;
 }
