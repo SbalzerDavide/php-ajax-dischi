@@ -31,3 +31,16 @@ a{
     
     }
 }
+
+.box{
+    cursor: pointer;
+    .img{
+        overflow: hidden;
+        img{
+            transition: transform .4s;
+        }
+    }
+    &:hover img{
+        transform: scale(1.2);
+    }
+}
