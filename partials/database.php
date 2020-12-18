@@ -45,7 +45,8 @@
     ];
 
     $filterDatabase= [];
-
+    
+    
     if (!empty($_GET['author'])){
         $filterAuthor = $_GET['author'];
         //echo $filterAuthor;
@@ -53,21 +54,25 @@
             if ($album['author'] == $filterAuthor){
                 $filterDatabase[] = $album;
                 //array_push($filterDatabase, $album);
+            } elseif ($filterAuthor == 'all'){
+                $filterDatabase = $database;
             }
         };
         //var_dump($filterDatabase);
-    } else {
-        $filterDatabase = $database;
-        //echo 'non ci sono parametri';
-        //var_dump($filterDatabase);
-
     };
-
-    //$filterDatabase= $database;
-
+    // else {
+        //     $filterDatabase = $database;
+        //     //echo 'non ci sono parametri';
+        //     //var_dump($filterDatabase);
+        
+        // };
+        
+        //$filterDatabase= $database;
+        
+    $mainData = [$database, $filterDatabase];
 
 
     header('Content-Type: application/json');
-    echo json_encode($filterDatabase);
+    echo json_encode($mainData);
 
 ?>

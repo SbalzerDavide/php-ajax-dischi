@@ -10,8 +10,17 @@ header{
     padding: 5px 0;
     background-color: $primary-dark;
     color: #fff;
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     .img{
         height: 50px;
+    }
+    i{
+        font-size: 25px;
+        cursor: pointer;
     }
 }
 main{

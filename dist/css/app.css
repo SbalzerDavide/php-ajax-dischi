@@ -6136,8 +6136,17 @@ header {
   background-color: #172430;
   color: #fff;
 }
+header .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 header .img {
   height: 50px;
+}
+header i {
+  font-size: 25px;
+  cursor: pointer;
 }
 
 main {

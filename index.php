@@ -16,8 +16,9 @@
             <div class="filter">
                <h4>Quale artista vuoi visualizzare?</h4>
                <select v-model="filter" @change='applyFilter'>
-                    <option v-for="album in albums" :value="album.author">
-                       {{ album.author }}
+                    <option value="all">All</option>
+                    <option v-for="author in authorList" :value="author">
+                       {{ author }}
                     </option>
                </select>
             </div>

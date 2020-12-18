@@ -14423,9 +14423,9 @@ __webpack_require__.r(__webpack_exports__);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app",
   data: {
-    prova: 'prooova',
     albums: [],
     apiUrl: window.location.href + 'partials/database.php',
+    authorList: [],
     filter: ''
   },
   created: function created() {
@@ -14433,8 +14433,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(this.apiUrl).then(function (response) {
       // handle success
-      console.log(response.data);
-      _this.albums = response.data;
+      console.log(response.data[0]);
+      _this.albums = response.data[0];
+
+      _this.albums.forEach(function (album) {
+        _this.authorList.push(album.author);
+      });
+
+      console.log('list: ' + _this.authorList);
     })["catch"](function (error) {
       // handle error
       console.log(error);
@@ -14451,8 +14457,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         }
       }).then(function (response) {
         // handle success
-        console.log(response.data);
-        _this2.albums = response.data;
+        _this2.albums = response.data[1];
       })["catch"](function (error) {
         // handle error
         console.log(error);
