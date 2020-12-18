@@ -16,24 +16,23 @@
         <!-- import header -->
         <?php require __DIR__ . '/partials/templates/header.php' ?> 
         <main>
+            <div class="filter">
+                <select>
+                    <?php foreach ($database as $album) {?>
+                        <option value=""><?php echo $album['author'] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
             <div class="main container">
-                <?php foreach ($database as $album){ ?>
-                    <div class="box">
-                        <div class="img">
-                            <img src="<?php echo $album['poster'] ?>" alt="">
-                        </div>
-                        <h3><?php echo $album['title'] ?></h3>
-                        <h5><?php echo $album['author'] ?></h5>
-                        <h4><?php echo $album['year'] ?></h4>
-                        <h5><?php echo $album['genre'] ?></h5>
-                        
+                <div v-for="album in albums" class="box">
+                    <div class="img">
+                        <img :src="album.poster" :alt="album.title">
                     </div>
-
-                <?php } ?>
-                
-                
-
-
+                    <h3>{{ album.title }}</h3>
+                    <h5>{{ album.author }}</h5>
+                    <h4>{{ album.year }}</h4>
+                    <h5>{{ album.genre }}</h5>
+                </div>        
             </div>
 
         </main>
